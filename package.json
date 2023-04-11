@@ -1,0 +1,10 @@
+{
+    "name": "my-flask-app",
+    "dependencies": {
+      "flask": "^2.0.0"
+    },
+    "scripts": {
+      "build": "npm install"
+    }
+  }
+  
