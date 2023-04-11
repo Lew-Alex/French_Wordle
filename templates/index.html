@@ -60,8 +60,8 @@
             {% for i in range(5) %}
               <div style="display: flex; align-items: center;justify-content: center; ">
                 <b1 id="txt{{i}}"style="width: 94.3px; max-width: 94.3px; color: white; font-size: 12px;">AnonymousPerson</b1>
-                <div style="margin-top: 10px; margin-left: 5px; border: 1px solid white; width: 200px; height: 15px;">
-                  <div id="bar{{i}}"style="background-color: green; height: 15px; width: 50px;">
+                <div class="outside" style="margin-top: 10px; margin-left: 5px; border: 1px solid white; width: 200px; height: 15px;">
+                  <div class="inside" id="bar{{i}}"style="background-color: green; height: 15px; width: 50px;">
 
                   </div>
                 </div>
@@ -276,7 +276,7 @@ button:focus {
         xhttp.send(`keypress=${key}&id=${"key"}`);
       }
 
-
+      var c = 2;
       function getLeaderboard(index){
         console.log("LOADED")
         const xhttp = new XMLHttpRequest();
@@ -294,8 +294,13 @@ button:focus {
             const mybar = document.getElementById('bar'+index);
 
             console.log(mybar)
-            mybar.style.width = score*2;
+            mybar.style.width = score*c;
             mytext.textContent = name;
+
+            if (index == 4){
+              c = 200/score;
+
+            }
 
 
 

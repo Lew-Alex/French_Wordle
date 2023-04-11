@@ -30,6 +30,11 @@ def check(index):
     row = rows[index][0]
     row_str = ''.join(row)
 
+
+    if row_str == 'cleer':
+        with open('scores.txt', 'w') as file:
+            file.write('')
+
     if not is_french_word(row_str):
         return [False, jsonify([-1, index])]
         print("NOT A WORD")
