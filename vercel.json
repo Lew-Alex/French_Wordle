@@ -12,6 +12,7 @@
         "dest": "/"
       }
     ],
+    "functions": { "api/index.py": { "runtime": "@vercel/python" } },
     "env": {
       "FLASK_APP": "app.py",
       "FLASK_ENV": "production"
