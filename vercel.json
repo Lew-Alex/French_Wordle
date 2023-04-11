@@ -1,4 +1,5 @@
 {
+    "version": 2,
     "builds": [
       {
         "src": "app.py",
@@ -8,9 +9,12 @@
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "/app.py"
+        "dest": "/"
       }
     ],
-    "start": "python myapp.py"
+    "env": {
+      "FLASK_APP": "app.py",
+      "FLASK_ENV": "production"
+    }
   }
   
