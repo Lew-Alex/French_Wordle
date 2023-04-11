@@ -120,7 +120,6 @@ def leader():
     scores = [line.strip().split(':') for line in content]
     scores.sort(key=lambda x: int(x[1]))
 
-    print(scores[0])
     return jsonify(scores[int(index)])
 
 
