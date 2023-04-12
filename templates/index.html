@@ -317,7 +317,10 @@ button:focus {
       }
       var row = 0
       var cur_row = []
+      done = false;
       function handle(key){
+
+        if (done) return;
         key = key.toLowerCase();
         if (key == "delete") key = "backspace";
         // console.log("HANDLE KEY"+key)
@@ -333,6 +336,7 @@ button:focus {
           
           guess = cur_row.join('');
           if (guess == word){
+            done = true;
             fetch('/endtime', {
                 method: 'POST',
                 body: JSON.stringify()
