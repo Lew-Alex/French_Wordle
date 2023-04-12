@@ -4,14 +4,16 @@ from time import time
 
 app = Flask(__name__)
 
+letters = [['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'], ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'], ['ENTRER', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', 'DELETE']]
 start_time = 0
 end_time = 0
 
 @app.route("/", methods=['GET', 'POST'])
 def home():
+    global letters
     global start_time
     start_time = time()
-    return render_template('index.html')
+    return render_template('index.html', letters=letters)
 
 @app.route("/leader", methods=['GET', 'POST'])
 def leader():
